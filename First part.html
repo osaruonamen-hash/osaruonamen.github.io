@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; transition: background 0.5s; }
+        button { padding: 10px; margin-top: 20px; cursor: pointer; }
+        input { padding: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1 id="title">Click the button to change me!</h1>
+    <input type="text" id="userInput" placeholder="Enter new title">
+    <button onclick="changeText()">Change Title</button>
+    <button onclick="changeBackground()">Change Background</button>
+
+    <script>
+        function changeText() {
+            const userInput = document.getElementById("userInput").value;
+            if (userInput.trim() !== "") {
+                document.getElementById("title").innerText = userInput;
+            }
+        }
+        
+        function changeBackground() {
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
